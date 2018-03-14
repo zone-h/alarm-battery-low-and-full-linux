@@ -6,6 +6,8 @@ How can I play a custom sound when my battery is low?
 or
 how to create audio play if battery low and full ?
 
+![image1](https://raw.githubusercontent.com/zone-h/alarm-battery-low-and-full-linux/master/Screenshot%20from%202018-03-14%2013-33-02.png)
+
 	Step 1: Install mpg3
 
 sudo apt-get install acpi mpg123

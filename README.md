@@ -45,3 +45,9 @@ chmod +x /bin/battery_alert
 
 cat:
 sesuaikan dengan user masing-masing di baris ke 21 dan 27.
+
+download :
+
+```sh
+git clone https://github.com/zone-h/alarm-battery-low-and-full-linux.git
+```

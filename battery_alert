@@ -1,0 +1,15 @@
+#!/bin/bash
+PATH=/opt/someApp/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+if [ `acpi -b | awk ' { print ($3)}'`  == "Discharging," ] ; then
+    # Discharging
+    # Monitor for low battery
+    if [ `acpi -b | awk ' { print ($4)-0}'`  -le "25" ] ; then
+        pactl set-sink-volume 0 75\% && pactl set-sink-mute 0 0 && mpg123 /home/anon_hq_id/alarm_battery_low_and_full/battery_low.mp3 ;
+    fi
+else
+    # Charging
+    if [ `acpi -b | awk ' { print ($4)-0}'`  -eq "100" ] ; then
+        # Fully charged
+        pactl set-sink-volume 0 75\% && pactl set-sink-mute 0 0 && mpg123 /home/anon_hq_id/alarm_battery_low_and_full/battery_full.mp3 ;
+    fi
+fi
